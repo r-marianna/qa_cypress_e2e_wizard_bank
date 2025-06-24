@@ -37,7 +37,7 @@ describe('Bank app', () => {
     cy.get('[ng-show="message"]')
       .should('contain', 'Deposit Successful');
     cy.contains('[ng-hide="noAccount"]', 'Balance')
-      .contains('strong', expectedBalance)
+      .contains('strong', `${expectedBalance}`)
       .should('be.visible');
 
     cy.get('[ng-click="withdrawl()"]').click();
@@ -49,7 +49,7 @@ describe('Bank app', () => {
     cy.get('[ng-show="message"]')
       .should('contain', 'Transaction successful');
     cy.contains('[ng-hide="noAccount"]', 'Balance')
-      .contains('strong', balance)
+      .contains('strong', `${balance}`)
       .should('be.visible');
 
     cy.get('[ng-click="transactions()"]').click();
